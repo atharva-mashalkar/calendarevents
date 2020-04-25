@@ -22,11 +22,11 @@
 
 	<div class ='formdiv'>
 	<div class="formitemdiv2">
-	<form action = "/events/:<%=data.Email%>" method="POST" autocomplete="off" >
+	<form action = "/events/:<%=data.Email%>" method="POST" autocomplete="off"  id = "formid" >
 	    <div class="form-group">
     		<input type="search" style="box-shadow: .5em .5em .5em .5em #493933;color:#391C11" name="Email" class="form-control searchinp" id="myTextInput"  placeholder="Email Id" value="<%=data.Email%>" readonly>
     		<div class="verifiedButton">
-	  		<button type="submit" class="verify" >Verified</button>
+	  		<button type="submit" class="verify" id = "verifiedButton">Verified</button>
 	  		<div>
 	  	</div>
 	</form>
