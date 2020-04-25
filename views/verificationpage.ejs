@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Verification</title>
 	<!-- head ---------------------------- -->
-	   <%- include('./common/head') -%> 
-	<!-- head closed --------------------- --> 
+	<%- include( './common/head') -%>
+		<!-- head closed --------------------- -->
 </head>
+
 <body style="background: #FFE8DF!important">
-
 	<!-- Message -------------------------- -->
-    <%- include('./common/message') -%>
-    <!-- Message ends --------------------- -->
-
-	<div class="jumbotron jumbotron-fluid note2">
-	  	<div class="container title" style="font-family: 'Lobster', cursive;">
-	    	<h1 class="display-5">We have sent you a mail containing a verification link.Please check your email and click on the verification link</h1>
-	    	<h1 class="display-5">Once your are done with the verification process by visiting your email then click the verified button
+	<%- include( './common/message') -%>
+		<!-- Message ends --------------------- -->
+		<div class="jumbotron jumbotron-fluid note2">
+			<div class="container title" style="font-family: 'Lobster', cursive;">
+				<h1 class="display-5">We have sent you a mail containing a verification link.Please check your email and click on the verification link</h1>
+				<h1 class="display-5">Once your are done with the verification process by visiting your email then click the verified button
 	    	</h1>
-	  	</div>
-	</div>
-
-	<div class ='formdiv'>
-	<div class="formitemdiv2">
-	<form action = "/events/:<%=data.Email%>" method="POST" autocomplete="off"  id = "formid" >
-	    <div class="form-group">
-    		<input type="search" style="box-shadow: .5em .5em .5em .5em #493933;color:#391C11" name="Email" class="form-control searchinp" id="myTextInput"  placeholder="Email Id" value="<%=data.Email%>" readonly>
-    		<div class="verifiedButton">
-	  		<button type="submit" class="verify" id = "verifiedButton">Verified</button>
-	  		<div>
-	  	</div>
-	</form>
-	</div>
-	</div>
-
-
-	<!-- Bootstrap script tags ------------------------ -->
-	   <%- include('./common/bootstrapScript') -%> 
-	<!-- Bootstrap script tags closed ----------------- --> 
-
-	<script>
-
-		let verifiedButton = document.getElementById('verifiedButton');
-		let formid = document.getElementById('formid');
-
-		setTimeout(() =>{
-			formid.action = "/notverified" ; 
-			verifiedButton.click(); 
-		}, 900000)
-		
-	</script>
+			</div>
+		</div>
+		<div class='formdiv'>
+			<div class="formitemdiv2">
+				<form action="/events/:<%=data.Email%>" method="POST" autocomplete="off" id="formid">
+					<div class="form-group">
+						<input type="search" style="box-shadow: .5em .5em .5em .5em #493933;color:#391C11" name="Email" class="form-control searchinp" id="myTextInput" placeholder="Email Id" value="<%=data.Email%>" readonly>
+						<div class="verifiedButton">
+							<button type="submit" class="verify" id="verifiedButton">Verified</button>
+							<div></div>
+				</form>
+				</div>
+				</div>
+				<!-- Bootstrap script tags ------------------------ -->
+				<%- include( './common/bootstrapScript') -%>
+					<!-- Bootstrap script tags closed ----------------- -->
+					<script>
+						let verifiedButton = document.getElementById('verifiedButton');
+						let formid = document.getElementById('formid');
+				
+						setTimeout(() =>{
+							formid.action = "/notverified" ; 
+							verifiedButton.click(); 
+						}, 900000)
+					</script>
 </body>
+
 </html>
